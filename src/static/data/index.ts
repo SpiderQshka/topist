@@ -112,7 +112,7 @@ export const data: IDataObject[] = [
   },
   {
     date: "Autumn 2020",
-    header: "Studing science, fighting dictatorship",
+    header: "Studing and fighting",
     motto: "Brave and smart",
     description: "Long story...",
     photos: [

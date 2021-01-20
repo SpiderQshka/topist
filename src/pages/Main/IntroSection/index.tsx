@@ -8,7 +8,7 @@ export const IntroSection: React.FunctionComponent = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <h3 className={styles.subheader}>Our little</h3>
-        <h1 className={styles.header}>Love story</h1>
+        <h1 className={styles.header}>Lo&shy;ve sto&shy;ry</h1>
         <div className={styles.actionsBlock}>
           <button
             className={`${styles.btn} ${styles.scrollDownBtn}`}

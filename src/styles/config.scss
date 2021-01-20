@@ -1,9 +1,11 @@
-$secondary-color-dark: #222831;
-$secondary-color-light: #30475e;
+$secondary-color-dark: #2c061f;
+$secondary-color-light: #374045;
 
-$primary-color: #ececec;
+$primary-color: #e1d89f;
 
-$accent-color: #f2a365;
+$accent-color: #d89216;
+
+$polaroid-color: #fff;
 
 $leading-line-width: 2px;
 
@@ -44,7 +46,6 @@ $leading-line-width: 2px;
 @mixin neonFont {
   @include nonSelectingText;
   font-family: "Archivo Black", "Archivo", sans-serif;
-  text-transform: uppercase;
   font-weight: normal;
   display: block;
   height: auto;

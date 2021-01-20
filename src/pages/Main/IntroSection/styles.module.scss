@@ -25,6 +25,7 @@ $btn-size: 100px;
     }
     .header {
       @include neonFont;
+      text-transform: uppercase;
       font-size: 100px;
     }
     .actionsBlock {

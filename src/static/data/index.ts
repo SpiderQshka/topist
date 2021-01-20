@@ -72,7 +72,7 @@ export const data: IDataObject[] = [
         src: winter20192020_2,
         caption: "My first work - right near you",
       },
-      { src: winter20192020_3, caption: "But our hears weren't Frozen" },
+      { src: winter20192020_3, caption: "But our hearts weren't Frozen" },
       { src: winter20192020_4, caption: "Your eyes are azure!" },
     ],
   },
@@ -119,7 +119,7 @@ export const data: IDataObject[] = [
       { src: autumn2020_1, caption: "Were we start.." },
       {
         src: autumn2020_2,
-        caption: "I'm looking at this code!",
+        caption: "- I'm watching for you, code!",
       },
       { src: autumn2020_3, caption: "Through hard times together" },
     ],

@@ -3,7 +3,7 @@
 $polaroid-width: 350px;
 
 .polaroid {
-  background: #fff;
+  background: $polaroid-color;
   padding: 1rem;
   box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
 }
@@ -24,7 +24,6 @@ $polaroid-width: 350px;
   width: $polaroid-width;
   display: inline-block;
   filter: grayscale(100%);
-  // margin: 0 auto;
 }
 .container .polaroid:before {
   content: "";

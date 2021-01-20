@@ -40,25 +40,20 @@ $container-padding: 50px;
         padding: 20px 0 30px;
         .dateBlock,
         .mottoBlock {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           font-family: "Courier New", Courier, monospace;
           color: $secondary-color-dark;
-          display: block;
           font-size: 16px;
           position: relative;
-          text-align: center;
-          z-index: 1;
           text-transform: uppercase;
-          &:after {
-            content: "";
-            border-top: 3px solid $secondary-color-dark;
-            position: absolute;
-            top: 6px;
-            left: 0;
-            width: 100%;
-            z-index: -1;
+          .line {
+            flex-grow: 1;
+            height: $leading-line-width;
+            background-color: $secondary-color-dark;
           }
           .text {
-            background: $primary-color;
             padding: 0 10px;
           }
         }
@@ -68,6 +63,7 @@ $container-padding: 50px;
           text-transform: uppercase;
           text-align: center;
           margin: 20px 0;
+          color: $secondary-color-dark;
         }
       }
       .descriptionText {
@@ -77,7 +73,7 @@ $container-padding: 50px;
         font-size: 30px;
         text-align: center;
         padding-bottom: 20px;
-        color: $secondary-color-light;
+        color: $secondary-color-dark;
       }
     }
   }
@@ -96,12 +92,15 @@ $container-padding: 50px;
         .dateBlock,
         .mottoBlock {
           .text {
-            background-color: $secondary-color-dark;
             color: $primary-color;
           }
-          &:after {
-            border-color: $primary-color;
+          .line {
+            background-color: $primary-color;
           }
+        }
+        .header {
+          @include neonFont();
+          color: $primary-color;
         }
       }
     }

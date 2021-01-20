@@ -1,0 +1,11 @@
+@import "../../../styles/config.scss";
+
+@media all and (max-width: 1400px) {
+  .container,
+  .container.dark {
+    .content {
+      grid-template-areas: "description" "photos";
+      grid-template-columns: 1fr;
+    }
+  }
+}

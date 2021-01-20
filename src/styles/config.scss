@@ -1,0 +1,103 @@
+$secondary-color-dark: #222831;
+$secondary-color-light: #30475e;
+
+$primary-color: #ececec;
+
+$accent-color: #f2a365;
+
+$leading-line-width: 2px;
+
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivoblack/v10/HTxqL289NzCGg4MzN6KJ7eW6CYyF_g.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Handwritten";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../static/fonts/IndieFlower-Regular.ttf);
+}
+
+@mixin nonSelectingText {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+@mixin primaryFont {
+  font-family: "Archivo Black", "Archivo", sans-serif;
+}
+
+@mixin handwrittenFont {
+  @include nonSelectingText;
+  font-family: "Handwritten", sans-serif;
+}
+
+@mixin neonFont {
+  @include nonSelectingText;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  display: block;
+  height: auto;
+  color: $primary-color;
+  animation: neonAnimation 3s infinite;
+}
+
+@mixin btn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+
+  cursor: pointer;
+}
+
+@keyframes neonAnimation {
+  0% {
+    text-shadow: -1px -1px 1px $primary-color, -1px 1px 1px $primary-color,
+      1px -1px 1px $primary-color, 1px 1px 1px $primary-color,
+      0 0 3px $primary-color, 0 0 5px $primary-color, 0 0 10px $primary-color,
+      0 0 30px $accent-color, 0 0 30px $accent-color, 0 0 40px $accent-color,
+      0 0 70px $accent-color, 0 0 90px $accent-color, 0 0 190px $accent-color;
+  }
+  50% {
+    text-shadow: -1px -1px 1px $primary-color, -1px 1px 1px $primary-color,
+      1px -1px 1px $primary-color, 1px 1px 1px $primary-color,
+      0 0 5px $primary-color, 0 0 10px $primary-color, 0 0 15px $primary-color,
+      0 0 40px $accent-color, 0 0 40px $accent-color, 0 0 50px $accent-color,
+      0 0 80px $accent-color, 0 0 100px $accent-color, 0 0 200px $accent-color;
+  }
+  100% {
+    text-shadow: -1px -1px 1px $primary-color, -1px 1px 1px $primary-color,
+      1px -1px 1px $primary-color, 1px 1px 1px $primary-color,
+      0 0 3px $primary-color, 0 0 5px $primary-color, 0 0 10px $primary-color,
+      0 0 30px $accent-color, 0 0 30px $accent-color, 0 0 40px $accent-color,
+      0 0 70px $accent-color, 0 0 90px $accent-color, 0 0 190px $accent-color;
+  }
+}

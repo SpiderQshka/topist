@@ -1,0 +1,111 @@
+@import "../../../styles/config.scss";
+
+$photos-block-width: 900px;
+$container-padding: 50px;
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $primary-color;
+  padding: $container-padding;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  .content {
+    display: grid;
+    grid-template-columns: $photos-block-width 1fr;
+    grid-template-areas: "photos description";
+    grid-column-gap: 50px;
+    z-index: 2;
+    width: 100%;
+    .photosBlock {
+      grid-area: photos;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+    .descriptionBlock {
+      grid-area: description;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .headerBlock {
+        position: relative;
+        background-color: $primary-color;
+        margin-top: 40px;
+        padding: 20px 0 30px;
+        .dateBlock,
+        .mottoBlock {
+          font-family: "Courier New", Courier, monospace;
+          color: $secondary-color-dark;
+          display: block;
+          font-size: 16px;
+          position: relative;
+          text-align: center;
+          z-index: 1;
+          text-transform: uppercase;
+          &:after {
+            content: "";
+            border-top: 3px solid $secondary-color-dark;
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+          }
+          .text {
+            background: $primary-color;
+            padding: 0 10px;
+          }
+        }
+        .header {
+          @include primaryFont;
+          font-size: 70px;
+          text-transform: uppercase;
+          text-align: center;
+          margin: 20px 0;
+        }
+      }
+      .descriptionText {
+        background-color: $primary-color;
+        @include handwrittenFont;
+        line-height: 1.7;
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 20px;
+        color: $secondary-color-light;
+      }
+    }
+  }
+}
+
+.container.dark {
+  background-color: $secondary-color-dark;
+  .content {
+    grid-template-columns: 1fr $photos-block-width;
+    grid-template-areas: "description photos";
+    .descriptionBlock {
+      .headerBlock,
+      .descriptionText {
+        color: $primary-color;
+        background-color: $secondary-color-dark;
+        .dateBlock,
+        .mottoBlock {
+          .text {
+            background-color: $secondary-color-dark;
+            color: $primary-color;
+          }
+          &:after {
+            border-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "./media.scss";

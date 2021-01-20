@@ -1,0 +1,60 @@
+@import "../../../styles/config.scss";
+
+$btn-size: 100px;
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: $secondary-color-dark;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    .subheader {
+      @include handwrittenFont;
+      color: $primary-color;
+      font-size: 50px;
+      margin-bottom: 40px;
+    }
+    .header {
+      @include neonFont;
+      font-size: 100px;
+    }
+    .actionsBlock {
+      position: absolute;
+      bottom: 50px;
+      right: calc(50% - #{$btn-size} / 2);
+      .scrollDownBtn {
+        @include btn;
+        height: $btn-size;
+        width: $btn-size;
+        display: flex;
+        align-items: center;
+        border-radius: calc(#{$btn-size} / 2);
+        background-color: $primary-color;
+        padding: 15px;
+        .btnIcon {
+          max-width: 100%;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -50px;
+          right: calc(50% - #{$leading-line-width} / 2);
+          display: block;
+          width: $leading-line-width;
+          background-color: $primary-color;
+          height: 50px;
+          cursor: default;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import "../styles.module.scss";
+
+.line {
+  position: absolute;
+  z-index: 1;
+  &.right {
+    background-color: $secondary-color-dark;
+    &.line1 {
+      width: $leading-line-width;
+      height: $container-padding;
+      top: 0;
+      left: calc(50% - #{$leading-line-width} / 2);
+    }
+    &.line2 {
+      height: $leading-line-width;
+      left: calc(50% - #{$leading-line-width} / 2);
+      right: calc(
+        (100% - #{$photos-block-width}) / 2 - #{$container-padding} / 2
+      );
+    }
+    &.line3 {
+      width: $leading-line-width;
+      top: $container-padding;
+      right: calc(
+        (100% - #{$photos-block-width}) / 2 - #{$container-padding} / 2
+      );
+      bottom: $container-padding;
+    }
+    &.line4 {
+      height: $leading-line-width;
+      left: calc(50% - #{$leading-line-width} / 2);
+      right: calc(
+        (100% - #{$photos-block-width}) / 2 - #{$container-padding} / 2
+      );
+      bottom: $container-padding;
+    }
+    &.line5 {
+      width: $leading-line-width;
+      height: $container-padding;
+      bottom: 0;
+      left: calc(50% - #{$leading-line-width} / 2);
+    }
+  }
+  &.left {
+    background-color: $primary-color;
+    &.line1 {
+      width: $leading-line-width;
+      height: $container-padding;
+      top: 0;
+      left: calc(50% - #{$leading-line-width} / 2);
+    }
+    &.line2 {
+      height: $leading-line-width;
+      right: calc(50% - #{$leading-line-width} / 2);
+      left: calc(
+        (100% - #{$photos-block-width}) / 2 - #{$container-padding} / 2
+      );
+    }
+    &.line3 {
+      width: $leading-line-width;
+      top: $container-padding;
+      left: calc(
+        (100% - #{$photos-block-width}) / 2 - #{$container-padding} / 2
+      );
+      bottom: $container-padding;
+    }
+    &.line4 {
+      height: $leading-line-width;
+      right: calc(50% - #{$leading-line-width} / 2);
+      left: calc(
+        (100% - #{$photos-block-width}) / 2 - #{$container-padding} / 2
+      );
+      bottom: $container-padding;
+    }
+    &.line5 {
+      width: $leading-line-width;
+      height: $container-padding;
+      bottom: 0;
+      left: calc(50% - #{$leading-line-width} / 2);
+    }
+  }
+}
+
+@import "./media.scss";

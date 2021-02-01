@@ -1,0 +1,62 @@
+@import "../../styles/config.scss";
+
+$video-width: 500px;
+$strip-port-size: 10px;
+
+.container {
+  display: inline-block;
+  padding: 20px 35px;
+  position: relative;
+  transform: scale(0.9, 0.9) rotate(5deg);
+  max-width: $video-width;
+  .video {
+    filter: sepia(100%);
+    transition: 1s;
+    &:hover {
+      filter: sepia(0%);
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to bottom,
+        $secondary-color-dark $strip-port-size,
+        transparent $strip-port-size
+      ),
+      linear-gradient(
+        to right,
+        $secondary-color-dark $strip-port-size,
+        transparent $strip-port-size
+      ),
+      linear-gradient(
+        to bottom,
+        $secondary-color-dark $strip-port-size,
+        transparent $strip-port-size
+      ),
+      linear-gradient(
+        to right,
+        $secondary-color-dark $strip-port-size,
+        transparent $strip-port-size
+      ),
+      linear-gradient(
+        to right,
+        transparent $strip-port-size,
+        $secondary-color-dark $strip-port-size
+      );
+    background-size: calc(#{$strip-port-size} * 1) calc(#{$strip-port-size} * 2),
+      calc(#{$strip-port-size} * 1) calc(#{$strip-port-size} * 2),
+      calc(#{$strip-port-size} * 1) calc(#{$strip-port-size} * 2),
+      calc(#{$strip-port-size} * 1) calc(#{$strip-port-size} * 2),
+      calc(100% - #{$strip-port-size} * 3) 100%;
+    background-repeat: repeat-y;
+    background-position: $strip-port-size 0, top left,
+      calc(100% - #{$strip-port-size}) 0, top right, $strip-port-size 0;
+    padding: calc(#{$strip-port-size} * 2.5) calc(#{$strip-port-size} * 3);
+    box-sizing: border-box;
+  }
+}

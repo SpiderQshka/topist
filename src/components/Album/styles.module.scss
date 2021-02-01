@@ -1,0 +1,21 @@
+@import "../../styles/config.scss";
+
+.container {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto 0;
+  background-color: $secondary-color-dark;
+  position: relative;
+  .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    &:nth-child(2) {
+      background-color: yellow;
+    }
+  }
+}

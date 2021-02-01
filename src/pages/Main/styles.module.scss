@@ -1,0 +1,10 @@
+@import "../../styles/config.scss";
+
+.container {
+  background-size: cover !important;
+  background: url("../../static/images/background.jpg");
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

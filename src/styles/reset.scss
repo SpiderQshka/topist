@@ -147,8 +147,5 @@ table {
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  // perspective: $perspective;
+  overflow: hidden;
 }

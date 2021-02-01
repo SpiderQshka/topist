@@ -8,6 +8,9 @@ $btn-size: 100px;
   background-color: $secondary-color-dark;
   position: relative;
   padding: 20px;
+  // transition: 1s;
+  // transform-origin: top left;
+  // transform-style: preserve-3d;
   box-sizing: border-box;
   .content {
     height: 100%;

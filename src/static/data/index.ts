@@ -32,6 +32,8 @@ import winter20202021_3 from "static/images/winter20202021/3.jpg";
 import winter20202021_4 from "static/images/winter20202021/4.jpg";
 import winter20202021_5 from "static/images/winter20202021/5.jpg";
 
+import video from "static/videos/video2.mp4";
+
 interface IPhoto {
   caption: string;
   src: string;
@@ -43,6 +45,10 @@ export interface IDataObject {
   motto: string;
   description: string;
   photos: IPhoto[];
+  video?: {
+    isVertical: boolean;
+    src: string;
+  };
 }
 
 export const data: IDataObject[] = [
@@ -139,5 +145,16 @@ export const data: IDataObject[] = [
       { src: winter20202021_4, caption: "2, oh no, 3 nice guys" },
       { src: winter20202021_5, caption: "Smiling sun" },
     ],
+  },
+  {
+    date: "Winter 2020-2021",
+    header: "Magic moments",
+    motto: "Lots to remember",
+    description: "Long story...",
+    video: {
+      isVertical: true,
+      src: video,
+    },
+    photos: [],
   },
 ];

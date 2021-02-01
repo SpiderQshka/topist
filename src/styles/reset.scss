@@ -1,3 +1,5 @@
+@import "./config.scss";
+
 html,
 body,
 div,
@@ -87,6 +89,11 @@ video {
   vertical-align: baseline;
 }
 
+video,
+img {
+  max-width: 100%;
+}
+
 /* HTML5 display-role reset for older browsers */
 
 article,
@@ -140,4 +147,8 @@ table {
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  // perspective: $perspective;
 }

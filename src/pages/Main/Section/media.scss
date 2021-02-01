@@ -4,8 +4,22 @@
   .container,
   .container.dark {
     .content {
-      grid-template-areas: "description" "photos";
+      grid-template-areas: "description" "visual";
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .container,
+  .container.dark {
+    .content {
+      .visualBlock {
+        display: block;
+        .leftColumn {
+          margin-bottom: $distance-between-photos;
+        }
+      }
     }
   }
 }

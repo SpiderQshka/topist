@@ -1,7 +1,8 @@
 @import "../../../styles/config.scss";
 
-$photos-block-width: 900px;
+$photos-block-width: 1000px;
 $container-padding: 50px;
+$distance-between-photos: 50px;
 
 .container {
   width: 100%;
@@ -14,19 +15,31 @@ $container-padding: 50px;
   .content {
     display: grid;
     grid-template-columns: $photos-block-width 1fr;
-    grid-template-areas: "photos description";
+    grid-template-areas: "visual description";
     grid-column-gap: 50px;
     z-index: 2;
     width: 100%;
-    .photosBlock {
-      grid-area: photos;
+    .visualBlock {
+      grid-area: visual;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
       justify-content: space-around;
-      height: 100%;
-      padding: 20px 0;
+      padding: 40px 0;
       box-sizing: border-box;
+      .leftColumn,
+      .rightColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & > * {
+          margin-bottom: $distance-between-photos;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .leftColumn {
+        margin-right: $distance-between-photos;
+      }
     }
     .descriptionBlock {
       grid-area: description;
@@ -38,6 +51,7 @@ $container-padding: 50px;
         background-color: $primary-color;
         margin-top: 40px;
         padding: 20px 0 30px;
+        hyphens: auto;
         .dateBlock,
         .mottoBlock {
           display: flex;
@@ -83,7 +97,7 @@ $container-padding: 50px;
   background-color: $secondary-color-dark;
   .content {
     grid-template-columns: 1fr $photos-block-width;
-    grid-template-areas: "description photos";
+    grid-template-areas: "description visual";
     .descriptionBlock {
       .headerBlock,
       .descriptionText {

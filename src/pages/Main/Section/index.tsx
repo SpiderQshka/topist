@@ -12,11 +12,11 @@ interface SectionProps {
 
 export const Section: React.FunctionComponent<SectionProps> = ({
   theme,
-  data: { date, description, header, motto, photos, video },
+  data: { date, description, motto, media },
 }) => {
   return (
     <div className={`${styles.container} ${theme === "dark" && styles.dark}`}>
-      <div className={styles.content}>
+      {/* <div className={styles.content}>
         <div className={`${styles.visualBlock} ${video && styles.video}`}>
           {video ? (
             <Video src={video.src} isVertical={video.isVertical} />
@@ -64,7 +64,7 @@ export const Section: React.FunctionComponent<SectionProps> = ({
           <p className={styles.descriptionText}>{description}</p>
         </div>
       </div>
-      <LeadingLine direction={theme === "dark" ? "left" : "right"} />
+      <LeadingLine direction={theme === "dark" ? "left" : "right"} /> */}
     </div>
   );
 };

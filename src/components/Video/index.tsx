@@ -3,12 +3,15 @@ import styles from "./styles.module.scss";
 
 interface VideoProps {
   src: string;
-  isVertical: boolean;
+  isVertical?: boolean;
+  height?: number;
+  width?: number;
 }
 
 export const Video: React.FunctionComponent<VideoProps> = ({
   src,
-  isVertical,
+  height,
+  width,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -24,12 +27,13 @@ export const Video: React.FunctionComponent<VideoProps> = ({
   };
 
   return (
-    <div className={`${styles.container}`}>
+    <div className={styles.container}>
       <video
         src={src}
         loop
         className={styles.video}
         ref={videoRef}
+        style={{ height: height || "auto", width: width || "auto" }}
         onMouseEnter={() => videoHandler(true)}
         onMouseLeave={() => videoHandler(false)}
       ></video>

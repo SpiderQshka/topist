@@ -1,0 +1,10 @@
+@import "../../styles/config.scss";
+
+.--left {
+  box-shadow: inset -7px 0 30px -3px rgba(0, 0, 0, 0.4) !important;
+  border-right: 1px solid $secondary-color-dark;
+}
+.--right {
+  box-shadow: inset 7px 0 30px -3px rgba(0, 0, 0, 0.4) !important;
+  border-left: 1px solid $secondary-color-dark;
+}

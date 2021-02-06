@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import startIcon from "static/icons/start.png";
-import { scrollWindowHeight } from "helpers";
+// import { scrollWindowHeight } from "helpers";
 
 export const IntroSection: React.FunctionComponent = () => {
   const [isDone, setIsDone] = useState<boolean>(false);
@@ -17,7 +17,7 @@ export const IntroSection: React.FunctionComponent = () => {
         <div className={styles.actionsBlock}>
           <button
             className={`${styles.btn} ${styles.scrollDownBtn}`}
-            onClick={scrollWindowHeight}
+            // onClick={scrollWindowHeight}
           >
             <img src={startIcon} className={styles.btnIcon} alt="Start!" />
           </button>

@@ -7,6 +7,7 @@
     background: $media-color;
     padding: 20px;
     box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+    position: relative;
     .img {
       transition: all 0.35s;
       filter: grayscale(100%);
@@ -21,6 +22,13 @@
       line-height: 1em;
       margin-top: 1rem;
       color: $secondary-color-light;
+      position: absolute;
+      z-index: 1;
+      background-color: $media-color;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px 0;
     }
   }
 }
@@ -83,22 +91,19 @@
   }
 }
 
-// .container:hover {
-//   transform: scale(1, 1) rotate(0deg) !important;
-//   transition: all 0.35s;
-//   .polaroid:before {
-//     content: "";
-//     position: absolute;
-//     z-index: -1;
-//     transform: rotate(0deg);
-//     height: 90%;
-//     width: 90%;
-//     bottom: 0%;
-//     right: 5%;
-//     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-//     transition: all 0.35s;
-//   }
-//   .polaroid > img {
-//     filter: sepia(0%);
-//   }
-// }
+.container:hover {
+  transform: scale(0.9, 0.9) rotate(0deg) !important;
+  // transition: all 0.35s;
+  .polaroid:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transform: rotate(0deg);
+    height: 90%;
+    width: 90%;
+    bottom: 0%;
+    right: 5%;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    // transition: all 0.35s;
+  }
+}

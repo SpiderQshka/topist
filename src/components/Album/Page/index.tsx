@@ -12,6 +12,7 @@ interface PageProps {
 interface PageSectionPreviewProps {
   date: string;
   motto: string;
+  description?: string;
 }
 
 export const EmptyPage = React.forwardRef<HTMLDivElement>(({}, ref) => {
@@ -20,7 +21,8 @@ export const EmptyPage = React.forwardRef<HTMLDivElement>(({}, ref) => {
 
 export const Page = React.forwardRef<HTMLDivElement, PageProps>(
   ({ number, media }, ref) => {
-    const mediaHeight = 500;
+    const photoHeight = 500;
+    const videoHeight = 450;
     return (
       <div
         className={`${styles.page} ${number % 2 !== 0 && styles.odd}`}
@@ -33,13 +35,13 @@ export const Page = React.forwardRef<HTMLDivElement, PageProps>(
               caption={(media as IPhoto).caption}
               photo={media.src}
               index={number}
-              height={mediaHeight}
+              height={photoHeight}
             />
           ) : (
             <Video
               src={media.src}
               isVertical={(media as IVideo).isVertical}
-              height={mediaHeight}
+              height={videoHeight}
             />
           )}
         </div>
@@ -51,7 +53,7 @@ export const Page = React.forwardRef<HTMLDivElement, PageProps>(
 export const PageSectionPreview = React.forwardRef<
   HTMLDivElement,
   PageSectionPreviewProps
->(({ date, motto }, ref) => {
+>(({ date, motto, description }, ref) => {
   return (
     <>
       <div className={`${styles.page} ${styles.sectionPreview}`} ref={ref}>
@@ -61,9 +63,13 @@ export const PageSectionPreview = React.forwardRef<
         </div>
       </div>
       <div
-        className={`${styles.page} ${styles.sectionPreview}`}
+        className={`${styles.page} ${styles.sectionPreview} ${styles.secondPage}`}
         ref={ref}
-      ></div>
+      >
+        <div className={`${styles.content}`}>
+          {description && <p className={styles.previewText}>{description}</p>}
+        </div>
+      </div>
     </>
   );
 });
@@ -73,7 +79,7 @@ export const PageStartCover = React.forwardRef<HTMLDivElement>(({}, ref) => {
     <>
       <div className={`${styles.page} ${styles.cover}`} ref={ref}>
         <div className={`${styles.content}`}>
-          <h2 className={styles.header}>Open me</h2>
+          <h2 className={styles.header}>❤</h2>
         </div>
       </div>
 
@@ -92,12 +98,12 @@ export const PageStartCover = React.forwardRef<HTMLDivElement>(({}, ref) => {
 export const PageEndCover = React.forwardRef<HTMLDivElement>(({}, ref) => {
   return (
     <>
-      <div className={`${styles.page} ${styles.cover}`} ref={ref}>
+      <div className={`${styles.page} ${styles.cover} ${styles.end}`} ref={ref}>
         <div className={`${styles.content}`}>
           <p className={styles.previewText}>Hope you liked it, sunny ;)</p>
         </div>
       </div>
-      <div className={`${styles.page} ${styles.cover}`} ref={ref}>
+      <div className={`${styles.page} ${styles.cover} ${styles.end}`} ref={ref}>
         <div className={`${styles.content}`}>
           <h2 className={styles.header}>THE END</h2>
         </div>

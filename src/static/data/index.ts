@@ -44,6 +44,7 @@ export interface IVideo {
   isVertical: boolean;
   isPhoto: boolean;
   src: string;
+  caption: string;
 }
 
 export type IMedia = IPhoto | IVideo;
@@ -176,6 +177,7 @@ export const data: IDataObject[] = [
         isVertical: true,
         src: video,
         isPhoto: false,
+        caption: "Dancing!",
       },
     ],
   },

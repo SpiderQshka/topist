@@ -20,7 +20,6 @@
       font-size: 1.8rem;
       text-align: center;
       line-height: 1em;
-      margin-top: 1rem;
       color: $secondary-color-light;
       position: absolute;
       z-index: 1;
@@ -93,7 +92,6 @@
 
 .container:hover {
   transform: scale(0.9, 0.9) rotate(0deg) !important;
-  // transition: all 0.35s;
   .polaroid:before {
     content: "";
     position: absolute;
@@ -104,6 +102,5 @@
     bottom: 0%;
     right: 5%;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-    // transition: all 0.35s;
   }
 }

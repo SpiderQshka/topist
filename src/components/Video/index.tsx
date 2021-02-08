@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 
 interface VideoProps {
   src: string;
+  caption?: string;
   isVertical?: boolean;
   height?: number;
   width?: number;
@@ -12,6 +13,7 @@ export const Video: React.FunctionComponent<VideoProps> = ({
   src,
   height,
   width,
+  caption,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -28,6 +30,7 @@ export const Video: React.FunctionComponent<VideoProps> = ({
 
   return (
     <div className={styles.container}>
+      {caption && <p className={styles.caption}>{caption}</p>}
       <video
         src={src}
         loop

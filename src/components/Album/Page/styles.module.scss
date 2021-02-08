@@ -18,6 +18,7 @@
   &.cover {
     background-color: $secondary-color-dark;
     color: $font-color;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75) !important;
     .content {
       position: relative;
       .previewText {

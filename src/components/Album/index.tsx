@@ -20,7 +20,7 @@ export const Album: React.FunctionComponent<AlbumProps> = ({ sections }) => {
       <HTMLFlipBook
         drawShadow={true}
         flippingTime={1500}
-        maxShadowOpacity={0.8}
+        maxShadowOpacity={0.9}
         showCover={true}
         className={styles.album}
         width={550}

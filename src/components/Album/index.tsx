@@ -9,7 +9,6 @@ import {
   PageSectionPreview,
   PageStartCover,
 } from "./Page";
-import { config } from "config";
 
 interface AlbumProps {
   sections: IDataObject[];
@@ -26,18 +25,15 @@ export const Album: React.FunctionComponent<AlbumProps> = ({ sections }) => {
   return (
     <div className={`${styles.container}`} ref={measuredRef}>
       <HTMLFlipBook
-        drawShadow={true}
-        flippingTime={1500}
-        maxShadowOpacity={0.9}
+        flippingTime={1000}
+        maxShadowOpacity={0.7}
         showCover={true}
         className={styles.album}
-        width={550}
-        height={config.albumHeight}
+        width={500}
+        height={400}
         size="stretch"
-        minWidth={550}
-        maxWidth={1000}
-        minHeight={config.minAlbumHeight}
-        maxHeight={config.maxAlbumHeight}
+        minWidth={450}
+        maxHeight={500}
       >
         <PageStartCover />
         {sections.map((section) => {

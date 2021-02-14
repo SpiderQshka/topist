@@ -1,4 +1,3 @@
-import { config } from "config";
 import React, { useRef } from "react";
 import styles from "./styles.module.scss";
 

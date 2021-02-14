@@ -9,8 +9,6 @@ $media-color: #f6f4f4;
 
 $font-color: #f6f4f4;
 
-$leading-line-width: 2px;
-
 @font-face {
   font-family: "Archivo Black";
   font-style: normal;
@@ -52,23 +50,6 @@ $leading-line-width: 2px;
   height: auto;
   color: $primary-color;
   animation: neonAnimation 3s infinite;
-}
-
-@mixin btn {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-  -webkit-appearance: none;
-
-  cursor: pointer;
 }
 
 @keyframes neonAnimation {

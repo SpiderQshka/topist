@@ -1,3 +1,4 @@
+import { config } from "config";
 import React, { useRef } from "react";
 import styles from "./styles.module.scss";
 
@@ -28,6 +29,8 @@ export const Video: React.FunctionComponent<VideoProps> = ({
     }
   };
 
+  const videoPadding = 100;
+
   return (
     <div className={styles.container}>
       {caption && <p className={styles.caption}>{caption}</p>}
@@ -36,7 +39,10 @@ export const Video: React.FunctionComponent<VideoProps> = ({
         loop
         className={styles.video}
         ref={videoRef}
-        style={{ height: height || "auto", width: width || "auto" }}
+        style={{
+          maxHeight: height ? height - videoPadding : "auto",
+          maxWidth: width ? width - videoPadding : "auto",
+        }}
         onMouseEnter={() => videoHandler(true)}
         onMouseLeave={() => videoHandler(false)}
       ></video>

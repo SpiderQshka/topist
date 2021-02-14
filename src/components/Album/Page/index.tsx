@@ -1,12 +1,13 @@
 import { Polaroid } from "components/Polaroid";
 import { Video } from "components/Video";
 import React from "react";
-import { IMedia, IPhoto, IVideo } from "static/data";
+import { IMedia, IPhoto, IVideo } from "interfaces";
 import styles from "./styles.module.scss";
 
 interface PageProps {
   media: IMedia;
   number: number;
+  height: number;
 }
 
 interface PageSectionPreviewProps {
@@ -20,9 +21,9 @@ export const EmptyPage = React.forwardRef<HTMLDivElement>(({}, ref) => {
 });
 
 export const Page = React.forwardRef<HTMLDivElement, PageProps>(
-  ({ number, media }, ref) => {
-    const photoHeight = 500;
-    const videoHeight = 450;
+  ({ number, media, height }, ref) => {
+    const mediaPadding = 40;
+    const mediaHeight = height - mediaPadding;
     return (
       <div className={styles.page} ref={ref} data-density="hard">
         <div className={`${styles.content}`}>
@@ -31,14 +32,14 @@ export const Page = React.forwardRef<HTMLDivElement, PageProps>(
               caption={(media as IPhoto).caption}
               photo={media.src}
               index={number}
-              height={photoHeight}
+              height={mediaHeight}
             />
           ) : (
             <Video
               src={media.src}
               isVertical={(media as IVideo).isVertical}
               caption={(media as IVideo).caption}
-              height={videoHeight}
+              height={mediaHeight}
             />
           )}
         </div>

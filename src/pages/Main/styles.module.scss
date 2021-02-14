@@ -2,7 +2,7 @@
 
 .container {
   background-size: cover !important;
-  background: url("../../static/images/background.jpg");
+  background: url("../../static/images/background.jpg"), $secondary-color-light;
   min-height: 100vh;
   display: flex;
   align-items: center;

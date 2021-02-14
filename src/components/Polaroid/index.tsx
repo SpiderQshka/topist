@@ -16,6 +16,7 @@ export const Polaroid: React.FunctionComponent<PolaroidProps> = ({
   height,
   width,
 }) => {
+  const imagePadding = 60;
   return (
     <div className={`${styles.container} ${styles[`container-${index % 3}`]}`}>
       <div className={styles.polaroid}>
@@ -24,7 +25,10 @@ export const Polaroid: React.FunctionComponent<PolaroidProps> = ({
           src={photo}
           alt={caption}
           className={styles.img}
-          style={{ height: height || "auto", width: width || "auto" }}
+          style={{
+            maxHeight: height ? height - imagePadding : "auto",
+            maxWidth: width ? width - imagePadding : "auto",
+          }}
         />
       </div>
     </div>

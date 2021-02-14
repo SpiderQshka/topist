@@ -3,4 +3,4 @@ declare module "*.mp4" {
   export default src;
 }
 
-declare module "react-pageflip";
+declare module "page-flip";
